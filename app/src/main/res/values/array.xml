@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="department">
+        <item>SELECT YOUR DEPARTMENT</item>
+        <item>COMPUTER SCIENCE AND ENGINEERING</item>
+        <item>MECHANICAL ENGINEERING</item>
+        <item>ELECTRICAL AND ENGINEERING</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>SELECT YOUR YEAR</item>
+        <item>YEAR 1</item>
+        <item>YEAR 2</item>
+        <item>YEAR 3</item>
+        <item>YEAR 4</item>
+    </string-array>
+</resources>
