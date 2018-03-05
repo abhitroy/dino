@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1052919239705",
+    "firebase_url": "https://viciousdelicious-2ca8f.firebaseio.com",
+    "project_id": "viciousdelicious-2ca8f",
+    "storage_bucket": "viciousdelicious-2ca8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052919239705:android:371c18daa1ca9dab",
+        "android_client_info": {
+          "package_name": "org.viciousanddelicious.viciousdelicious"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052919239705-psmq44u1tf0q942qa37ocrncp4lvva8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.viciousanddelicious.viciousdelicious",
+            "certificate_hash": "ee6c95584b1b413d534aa04827ba5ad8ec2cdaaf"
+          }
+        },
+        {
+          "client_id": "1052919239705-tfa9893kjcedqjug7b81rl2gq2riffu3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIWfMcydDGOmy04Gee1IVpUw9LyQI-N80"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052919239705-tfa9893kjcedqjug7b81rl2gq2riffu3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
