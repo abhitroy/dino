@@ -39,17 +39,45 @@
         android:layout_marginTop="120dp"/>
 
     <LinearLayout
+
+        android:id="@+id/crack"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="290dp"
+        android:orientation="horizontal"
+        android:background="@drawable/round_right_blue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cracks"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginLeft="40dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/next_white"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="140dp"
         android:layout_height="45dp"
         android:layout_marginTop="350dp"
         android:orientation="horizontal"
         android:background="@drawable/round_right_white"
-        android:id="@+id/temp">
+        android:id="@+id/qpaper">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-Books"
+            android:text="Q-Papers"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:textColor="@color/colorPrimary"
@@ -66,7 +94,7 @@
 
     <LinearLayout
 
-        android:id="@+id/temp1"
+        android:id="@+id/ebook"
         android:layout_width="140dp"
         android:layout_height="45dp"
         android:layout_marginTop="410dp"
@@ -76,7 +104,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Videos"
+            android:text="E-Books"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:textColor="@color/white"
@@ -99,7 +127,7 @@
         android:id="@+id/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Do you wish to go back to your PROFILE ?"
+        android:text="Do you wish to go back to your Profile ?"
         android:textColor="@color/white"
         android:textStyle="italic"
         android:textSize="15dp"

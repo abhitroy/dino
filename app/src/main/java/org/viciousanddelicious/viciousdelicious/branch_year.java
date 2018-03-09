@@ -21,7 +21,7 @@ public class branch_year extends AppCompatActivity implements AdapterView.OnItem
     public static final String saveit="savekey";
     public static final String saveit1="savekey1";
     String x,y;
-    String selected1="SELECT YOUR DEPARTMENT";
+    String selected1="SELECT YOUR SEMESTER";
     String selected2="SELECT YOUR YEAR";
     Button choice_branch_year;
 
@@ -39,7 +39,7 @@ public class branch_year extends AppCompatActivity implements AdapterView.OnItem
 
 // Create an ArrayAdapter using the string array and a default spinner layout
        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.department, android.R.layout.simple_spinner_item);
+                R.array.sem, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
@@ -57,7 +57,7 @@ public class branch_year extends AppCompatActivity implements AdapterView.OnItem
         choice_branch_year.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (selected1.equals("SELECT YOUR DEPARTMENT")||selected2.equals("SELECT YOUR YEAR"))
+                if (selected1.equals("SELECT YOUR SEMESTER")||selected2.equals("SELECT YOUR YEAR"))
                 {
                     Toast.makeText(branch_year.this, "Please select the Preference", Toast.LENGTH_SHORT).show();
                 }

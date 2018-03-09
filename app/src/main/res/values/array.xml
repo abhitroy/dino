@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="department">
-        <item>SELECT YOUR DEPARTMENT</item>
-        <item>COMPUTER SCIENCE AND ENGINEERING</item>
-        <item>MECHANICAL ENGINEERING</item>
-        <item>ELECTRICAL AND ENGINEERING</item>
+    <string-array name="sem">
+        <item>SELECT YOUR SEMESTER</item>
+        <item>SEMESTER 1</item>
+        <item>SEMESTER 2</item>
+        <item>SEMESTER 3</item>
+        <item>SEMESTER 4</item>
+        <item>SEMESTER 5</item>
+        <item>SEMESTER 6</item>
+        <item>SEMESTER 7</item>
+        <item>SEMESTER 8</item>
     </string-array>
 
     <string-array name="year">

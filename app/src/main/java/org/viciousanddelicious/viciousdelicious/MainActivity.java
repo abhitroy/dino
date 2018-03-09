@@ -3,6 +3,7 @@ package org.viciousanddelicious.viciousdelicious;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private LinearLayout vdo;
+    private LinearLayout crack;
+    private LinearLayout qpaper;
     private LinearLayout book;
     String x;
     String y;
@@ -27,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        book = (LinearLayout) findViewById(R.id.temp);
-        vdo = (LinearLayout) findViewById(R.id.temp1);
+        qpaper = (LinearLayout) findViewById(R.id.qpaper);
+        crack = (LinearLayout) findViewById(R.id.crack);
         profile = (TextView) findViewById(R.id.profile);
+
+       book=(LinearLayout)findViewById(R.id.ebook);
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,20 +41,40 @@ public class MainActivity extends AppCompatActivity {
                 profilefn();
             }
         });
+        qpaper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                quest();
+            }
+        });
+        crack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                crack();
+            }
+        });
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bookfn();
-            }
-        });
-        vdo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                vdofn();
+                bookfunction();
             }
         });
 
 
+    }
+    public void crack ()
+    {
+        startActivity(new Intent(MainActivity.this,website_crack.class));
+    }
+
+    public void quest ()
+    {
+        startActivity(new Intent(MainActivity.this,website.class));
+
+    }
+    public void bookfunction ()
+    {
+        startActivity(new Intent(MainActivity.this,website_ebook.class));
     }
 
 

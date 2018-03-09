@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.viciousanddelicious.viciousdelicious">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -21,39 +22,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity
-        android:name=".option"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity
-        android:name=".loginf"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity
-        android:name=".registerf"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity
-        android:name=".forgot"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity
-        android:name=".Profile"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity android:name=".pdf" />
-    <activity
-        android:name=".VideoLandscape"
-        android:configChanges="screenLayout|screenSize|orientation"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity android:name=".recycle" />
-    <activity android:name=".MainActivity"
-        android:theme="@style/AppTheme.new"/>
-    <activity android:name=".contact" />
-    <activity
-        android:name=".branch_year"
-        android:theme="@style/AppTheme.NoActionBar" />
-    <activity android:name=".subject_choice" />
-    <activity android:name=".recycle_video"></activity>
-    <activity
-        android:name=".rate"
-        android:theme="@style/AppTheme.NoActionBar" />
-
-</application>
+        <activity
+            android:name=".option"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".loginf"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".registerf"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".forgot"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".pdf" />
+        <activity
+            android:name=".VideoLandscape"
+            android:configChanges="screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".recycle" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.new" />
+        <activity android:name=".contact" />
+        <activity
+            android:name=".branch_year"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".subject_choice" />
+        <activity android:name=".recycle_video" />
+        <activity
+            android:name=".rate"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".website" />
+        <activity android:name=".website_crack" />
+        <activity android:name=".website_ebook"></activity>
+    </application>
 
 </manifest>
