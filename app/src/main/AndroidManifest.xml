@@ -57,7 +57,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".website" />
         <activity android:name=".website_crack" />
-        <activity android:name=".website_ebook"></activity>
+        <activity android:name=".website_ebook" />
+        <activity android:name=".chatroom"></activity>
     </application>
 
 </manifest>

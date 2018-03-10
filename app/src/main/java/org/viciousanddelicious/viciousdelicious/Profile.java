@@ -58,7 +58,7 @@ public class Profile extends AppCompatActivity {
         cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                contact();
+                startActivity(new Intent(Profile.this,chatroom.class));
             }
         });
 
