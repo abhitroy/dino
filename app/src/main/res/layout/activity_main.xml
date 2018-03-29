@@ -1,105 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="org.viciousanddelicious.viciousdelicious.MainActivity"
-    android:background="@drawable/bg"
-    android:orientation="vertical">
-    
-    <TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimary">
+
+    +<LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="THE NEW ERA"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LIBRARY"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="60dp"/>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="One stop that will put an end to all your \nsearches for e-books and video tutorials......."
-        android:textColor="@color/white"
-        android:textStyle="italic"
-        android:textSize="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="120dp"/>
-
-    <LinearLayout
-
-        android:id="@+id/crack"
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="290dp"
-        android:orientation="horizontal"
-        android:background="@drawable/round_right_blue">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cracks"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_marginLeft="40dp"/>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/next_white"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"/>
-    </LinearLayout>
-
-
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/vnd"
+            />
     <LinearLayout
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="350dp"
-        android:orientation="horizontal"
-        android:background="@drawable/round_right_white"
-        android:id="@+id/qpaper">
-
-        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Q-Papers"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
-            android:layout_marginLeft="30dp"/>
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/next_blue"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"/>
-    </LinearLayout>
-
-    <LinearLayout
+        <LinearLayout
 
         android:id="@+id/ebook"
-        android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="410dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        android:background="@drawable/round_right_blue">
+            android:gravity="center"
+            android:backgroundTintMode="src_atop"
+            android:backgroundTint="@color/white"
+        android:background="@drawable/main_button"
+
+            >
 
         <TextView
             android:layout_width="wrap_content"
@@ -109,38 +46,72 @@
             android:layout_gravity="center"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:layout_marginLeft="40dp"/>
+            android:gravity="center"
+            />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/next_white"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"/>
+
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <LinearLayout
 
-    <TextView
-        android:id="@+id/profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Do you wish to go back to your Profile ?"
-        android:textColor="@color/white"
-        android:textStyle="italic"
-        android:textSize="15dp"
-        android:layout_marginTop="485dp"
-        android:gravity="bottom"
-        android:textAlignment="center"/>
+            android:id="@+id/crack"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:orientation="horizontal"
+            android:background="@drawable/main_button"
+            android:backgroundTintMode="src_atop"
+            android:gravity="center"
+            android:backgroundTint="@color/white">
 
-    <View
-        android:layout_width="230dp"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginLeft="65dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cracks"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:orientation="vertical"
+            android:background="@drawable/main_button"
+            android:id="@+id/more"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:backgroundTintMode="src_atop">
 
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MORE"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/next_white"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
+    
+    

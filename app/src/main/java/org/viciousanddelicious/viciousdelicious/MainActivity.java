@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         qpaper = (LinearLayout) findViewById(R.id.qpaper);
         crack = (LinearLayout) findViewById(R.id.crack);
-        profile = (TextView) findViewById(R.id.profile);
+       // profile = (TextView) findViewById(R.id.profile);
 
        book=(LinearLayout)findViewById(R.id.ebook);
 
