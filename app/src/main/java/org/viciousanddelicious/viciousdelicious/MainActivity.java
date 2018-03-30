@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         qpaper = (LinearLayout) findViewById(R.id.qpaper);
         crack = (LinearLayout) findViewById(R.id.crack);
-       // profile = (TextView) findViewById(R.id.profile);
-
-       book=(LinearLayout)findViewById(R.id.ebook);
+        profile = (TextView) findViewById(R.id.profile);
+        book=(LinearLayout)findViewById(R.id.ebook);
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
