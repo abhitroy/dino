@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,8 +24,8 @@ ProgressDialog loading;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatroom);
-        FloatingActionButton fab =
-                (FloatingActionButton)findViewById(R.id.fab);
+        ImageButton fab =
+                (ImageButton)findViewById(R.id.fab);
         displayMessage();
 
         fab.setOnClickListener(new View.OnClickListener() {
