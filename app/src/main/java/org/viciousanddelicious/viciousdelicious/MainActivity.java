@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void quest ()
     {
-        startActivity(new Intent(MainActivity.this,website.class));
+        startActivity(new Intent(MainActivity.this,Profile.class));
 
     }
     public void bookfunction ()
