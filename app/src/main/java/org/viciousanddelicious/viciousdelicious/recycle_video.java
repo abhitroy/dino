@@ -86,7 +86,6 @@ public class recycle_video extends AppCompatActivity {
                         editor5.putString(saveit5,post_key);
                         editor5.commit();
                         Toast.makeText(recycle_video.this, post_key, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(recycle_video.this,VideoLandscape.class));
 
                     }
                 });

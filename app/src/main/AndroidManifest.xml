@@ -37,11 +37,6 @@
         <activity
             android:name=".Profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".pdf" />
-        <activity
-            android:name=".VideoLandscape"
-            android:configChanges="screenLayout|screenSize|orientation"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".recycle" />
         <activity
             android:name=".MainActivity"

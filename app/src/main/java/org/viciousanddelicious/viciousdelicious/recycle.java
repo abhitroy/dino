@@ -80,7 +80,7 @@ public class recycle extends AppCompatActivity {
                          editor4.putString(saveit4,post_key);
                          editor4.commit();
                          Toast.makeText(recycle.this, post_key, Toast.LENGTH_SHORT).show();
-                         startActivity(new Intent(recycle.this,pdf.class));
+
 
                      }
                  });
