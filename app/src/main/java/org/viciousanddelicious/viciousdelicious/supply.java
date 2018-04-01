@@ -15,7 +15,7 @@ public class supply extends AppCompatActivity {
 
     private TextView txt;
 
-    String ArrayName[]={"Study Material","Question Papers","Cracks"};
+    String ArrayName[]={"Study Material","Crack","Question Paper"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,8 @@ public class supply extends AppCompatActivity {
         CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu_supply);
         circlemenu.setMainMenu(Color.parseColor("#FFF176"),R.drawable.supplies,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#81C784"),R.drawable.supply)
-                .addSubMenu(Color.parseColor("#81D4FA"),R.drawable.question)
-                .addSubMenu(Color.parseColor("#e57373"),R.drawable.crack)
+                .addSubMenu(Color.parseColor("#81D4FA"),R.drawable.crack)
+                .addSubMenu(Color.parseColor("#e57373"),R.drawable.question)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
                     @Override
                     public void onMenuSelected(int i) {
