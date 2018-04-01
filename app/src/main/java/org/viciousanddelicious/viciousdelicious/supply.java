@@ -1,7 +1,10 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +13,9 @@ import android.widget.Toast;
 
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
+
+import static org.viciousanddelicious.viciousdelicious.branch_year.preference;
+import static org.viciousanddelicious.viciousdelicious.branch_year.saveit;
 
 public class supply extends AppCompatActivity {
 
@@ -30,16 +36,24 @@ public class supply extends AppCompatActivity {
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
                     @Override
                     public void onMenuSelected(int i) {
-                        Toast.makeText(supply.this, "Hello", Toast.LENGTH_SHORT).show();
+                        final int x=i;
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (x==0)
+                                    startActivity(new Intent(supply.this,website_ebook.class));
+                                if (x==1)
+                                    startActivity(new Intent(supply.this,website_crack.class));
+                                if (x==2)
+                                    startActivity(new Intent(supply.this,website.class));
+                            }
+                        },1000);
+
+
                     }
                 });
 
-        txt = (TextView) findViewById(R.id.pref_supply);
-        txt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(supply.this, branch_year.class));
-            }
-        });
+
     }
 }
