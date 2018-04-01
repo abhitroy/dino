@@ -1,14 +1,19 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
 public class supply extends AppCompatActivity {
+
+    private TextView txt;
 
     String ArrayName[]={"Study Material","Question Papers","Cracks"};
 
@@ -28,5 +33,13 @@ public class supply extends AppCompatActivity {
                         Toast.makeText(supply.this, "Hello", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+        txt = (TextView) findViewById(R.id.pref_supply);
+        txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(supply.this, branch_year.class));
+            }
+        });
     }
 }

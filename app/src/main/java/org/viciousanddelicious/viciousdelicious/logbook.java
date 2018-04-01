@@ -1,14 +1,19 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
 public class logbook extends AppCompatActivity {
+
+    private TextView txt;
 
     String ArrayName[]={"Time Table","Attendance","Grade"};
 
@@ -28,6 +33,14 @@ public class logbook extends AppCompatActivity {
                         Toast.makeText(logbook.this, "Hello", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+        txt = (TextView) findViewById(R.id.pref_log);
+        txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(logbook.this, branch_year.class));
+            }
+        });
 
     }
 }

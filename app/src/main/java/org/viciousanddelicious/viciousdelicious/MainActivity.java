@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout crack;
     private LinearLayout qpaper;
     private LinearLayout book;
+    private TextView txt;
     String x;
     String y;
     private TextView profile;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
-        circlemenu.setMainMenu(Color.parseColor("#81D4FA"),R.drawable.vnd,R.drawable.multiply)
+        circlemenu.setMainMenu(Color.parseColor("#ffffff"),R.drawable.vnd,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#81C784"),R.drawable.log)
                 .addSubMenu(Color.parseColor("#FFF176"),R.drawable.supplies)
                 .addSubMenu(Color.parseColor("#e57373"),R.drawable.explore)
@@ -62,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+        txt = (TextView) findViewById(R.id.pref_main);
+        txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, branch_year.class));
+            }
+        });
 
 
     /*    qpaper = (LinearLayout) findViewById(R.id.qpaper);
