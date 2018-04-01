@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,7 +44,22 @@ public class MainActivity extends AppCompatActivity {
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
                     @Override
                     public void onMenuSelected(int i) {
-                        Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+                        final int x=i;
+
+                            new Handler().postDelayed(new Runnable() {
+                                                          @Override
+                                                          public void run() {
+                                                              if (x==0)
+                                                              startActivity(new Intent(MainActivity.this,logbook.class));
+                                                              if (x==1)
+                                                                  startActivity(new Intent(MainActivity.this,supply.class));
+                                                              if (x==2)
+                                                                  startActivity(new Intent(MainActivity.this,explorer.class));
+                                                          }
+                                                      },1000);
+
+
+
                     }
                 });
 
