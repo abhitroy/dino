@@ -53,7 +53,10 @@
         <activity android:name=".website" />
         <activity android:name=".website_crack" />
         <activity android:name=".website_ebook" />
-        <activity android:name=".chatroom"></activity>
+        <activity android:name=".chatroom" />
+        <activity android:name=".logbook" />
+        <activity android:name=".supply" />
+        <activity android:name=".explorer"></activity>
     </application>
 
 </manifest>

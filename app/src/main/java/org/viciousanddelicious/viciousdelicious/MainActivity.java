@@ -3,16 +3,22 @@ package org.viciousanddelicious.viciousdelicious;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.hitomi.cmlibrary.CircleMenu;
+import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    String ArrayName[]={"Log Book","Supply","Explore"};
 
     private LinearLayout crack;
     private LinearLayout qpaper;
@@ -29,8 +35,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
+        circlemenu.setMainMenu(Color.parseColor("#81D4FA"),R.drawable.vnd,R.drawable.multiply)
+                .addSubMenu(Color.parseColor("#81C784"),R.drawable.log)
+                .addSubMenu(Color.parseColor("#FFF176"),R.drawable.supplies)
+                .addSubMenu(Color.parseColor("#e57373"),R.drawable.explore)
+                .setOnMenuSelectedListener(new OnMenuSelectedListener() {
+                    @Override
+                    public void onMenuSelected(int i) {
+                        Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-        qpaper = (LinearLayout) findViewById(R.id.qpaper);
+
+    /*    qpaper = (LinearLayout) findViewById(R.id.qpaper);
         crack = (LinearLayout) findViewById(R.id.crack);
         profile = (TextView) findViewById(R.id.profile);
         book=(LinearLayout)findViewById(R.id.ebook);
@@ -108,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, Profile.class));
     }
 
-
+*/
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
