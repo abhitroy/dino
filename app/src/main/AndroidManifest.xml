@@ -50,9 +50,12 @@
         <activity
             android:name=".rate"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".website" />
-        <activity android:name=".website_crack" />
-        <activity android:name=".website_ebook" />
+        <activity android:name=".website"
+            android:theme="@style/AppTheme.new"/>
+        <activity android:name=".website_crack"
+            android:theme="@style/AppTheme.new"/>
+        <activity android:name=".website_ebook"
+            android:theme="@style/AppTheme.new"/>
         <activity android:name=".chatroom" />
         <activity android:name=".logbook"
             android:theme="@style/AppTheme.new"/>
