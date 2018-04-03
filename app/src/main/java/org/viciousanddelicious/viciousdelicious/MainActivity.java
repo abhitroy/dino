@@ -9,6 +9,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout crack;
     private LinearLayout qpaper;
     private LinearLayout book;
-    private TextView txt;
+    private Button set;
     String x;
     String y;
     private TextView profile;
@@ -64,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        txt = (TextView) findViewById(R.id.pref_main);
-        txt.setOnClickListener(new View.OnClickListener() {
+        set = (Button) findViewById(R.id.pref_main);
+        set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, branch_year.class));

@@ -4,18 +4,7 @@
     >
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pref"
-        android:textSize="15dp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textStyle="italic"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:id="@+id/pref_main"
-        />
+
 
     <RelativeLayout
         android:layout_width="110dp"
@@ -27,6 +16,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/settings"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/pref_main"
+            />
 
     <com.hitomi.cmlibrary.CircleMenu
         android:id="@+id/circle_menu"

@@ -64,15 +64,11 @@
                 android:layout_marginTop="15dp"/>
         </LinearLayout>
 
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginTop="270dp"
-            android:layout_marginLeft="65dp"
-            android:background="@drawable/round"
-            android:text="save"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#00bcd4"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/go2"
             android:id="@+id/choice_branch_year"/>
 </LinearLayout>
