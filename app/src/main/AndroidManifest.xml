@@ -50,17 +50,24 @@
         <activity
             android:name=".rate"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".website"
-            android:theme="@style/AppTheme.new"/>
-        <activity android:name=".website_crack"
-            android:theme="@style/AppTheme.new"/>
-        <activity android:name=".website_ebook"
-            android:theme="@style/AppTheme.new"/>
+        <activity
+            android:name=".website"
+            android:theme="@style/AppTheme.new" />
+        <activity
+            android:name=".website_crack"
+            android:theme="@style/AppTheme.new" />
+        <activity
+            android:name=".website_ebook"
+            android:theme="@style/AppTheme.new" />
         <activity android:name=".chatroom" />
-        <activity android:name=".logbook"
-            android:theme="@style/AppTheme.new"/>
-        <activity android:name=".supply"
-            android:theme="@style/AppTheme.new"/>
+        <activity
+            android:name=".logbook"
+            android:theme="@style/AppTheme.new" />
+        <activity
+            android:name=".supply"
+            android:theme="@style/AppTheme.new" />
+        <activity android:name=".timetable" />
+        <activity android:name=".day_order"></activity>
     </application>
 
 </manifest>
