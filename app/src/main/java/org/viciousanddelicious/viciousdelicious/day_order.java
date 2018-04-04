@@ -49,7 +49,7 @@ class fetcher extends AsyncTask<Void,Void,Void>{
     Elements cols=null;
     @Override
     protected Void doInBackground(Void... arg0) {
-        try {
+     /*   try {
             Connection.Response res = Jsoup
                     .connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp")
                     .data("txtRegNumber", "iamalsouser")
@@ -67,29 +67,36 @@ class fetcher extends AsyncTask<Void,Void,Void>{
             doc = Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=5").cookies(cookies).get();
             table = doc.select("table").get(0); //select the first table.
 
-          //   temp = table.select("tr");
+            temp = table.select("tr");
 
-           //  row = temp.get(1);
-           //  cols = row.select("td");
+            row = temp.get(1);
+            cols = row.select("td");
         } catch (Exception e) {
             System.err.println(e);
 
             startActivity(new Intent(day_order.this,timetable.class));
 
-        }
+        }*/
         return null;
     }
         @Override
                 protected void onPostExecute(Void result)
         {
+            String str="15CS204J,15CS204J 15CS205,15CS205";
             List<String> list=new ArrayList<String>();
-            if (cols!=null) {
+
+      /*      if (cols!=null) {
 
 
                 for (int i = 0; i < cols.size(); i++)
+                {
                     list.add(cols.get(i).text());
+                System.out.println(cols.get(i).text());
+                }
+
                 System.out.println(list);
-            }
+            }*/
+
             pd.dismiss();
 
         }

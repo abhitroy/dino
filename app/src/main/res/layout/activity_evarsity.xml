@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.viciousanddelicious.viciousdelicious.evarsity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EVARSITY"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="75dp"
+        android:id="@+id/evar"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/evar"
+        android:layout_marginLeft="140dp"
+        android:text="Login"
+        android:textSize="23dp"
+        android:id="@+id/log"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/log"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/evar"
+        android:hint="Enter your Registration number"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/reg"
+        android:elevation="20dp"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/reg"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/evar"
+        android:hint="Enter your Registration number"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/pass"
+        android:elevation="20dp"
+        />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/pass"
+        android:layout_marginTop="20dp"
+        android:text="login"
+        android:background="@drawable/evar"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginLeft="200dp"
+        android:elevation="10dp"
+        android:id="@+id/login"/>
+
+</RelativeLayout>
