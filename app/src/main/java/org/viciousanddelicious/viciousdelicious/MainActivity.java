@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evarsity);
+        setContentView(R.layout.activity_main);
 
-      /* final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
+       final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
         circlemenu.setMainMenu(Color.parseColor("#ffffff"),R.drawable.vnd,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#81C784"),R.drawable.log)
                 .addSubMenu(Color.parseColor("#FFF176"),R.drawable.supplies)
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                                                               if (x==1)
                                                                   startActivity(new Intent(MainActivity.this,supply.class));
                                                               if (x==2)
-                                                                  startActivity(new Intent(MainActivity.this,Profile.class));
+                                                                  startActivity(new Intent(MainActivity.this,evarsity.class));
                                                           }
                                                       },1000);
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, branch_year.class));
             }
-        }); */
+        });
 
 
     /*    qpaper = (LinearLayout) findViewById(R.id.qpaper);
