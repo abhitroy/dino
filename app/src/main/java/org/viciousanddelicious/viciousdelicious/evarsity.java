@@ -1,11 +1,13 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.jsoup.Jsoup;
@@ -15,18 +17,27 @@ public class evarsity extends AppCompatActivity {
 
 EditText txtRegno;
 EditText txtPwd;
-Button loge;
+TextView loge;
+    TextView ski;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evarsity);
         txtRegno = (EditText) findViewById(R.id.reg);
         txtPwd = (EditText) findViewById(R.id.pass);
-        loge=(Button)findViewById(R.id.loge);
+        loge=(TextView) findViewById(R.id.loge);
+        ski=(TextView) findViewById(R.id.skip);
         loge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 check();
+
+            }
+        });
+        ski.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(evarsity.this,MainActivity.class));
 
             }
         });
