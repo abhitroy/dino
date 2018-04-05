@@ -1,6 +1,8 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,10 @@ public class evarsity extends AppCompatActivity {
 EditText txtRegno;
 EditText txtPwd;
 TextView loge;
+    public static final String preference_user="pref_user";
+    public static final String saveit_user="savekey_user";
+    public static final String preference_pass="pref_pass";
+    public static final String saveit_pass="savekey_pass";
     TextView ski;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +43,19 @@ TextView loge;
         ski.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(evarsity.this,MainActivity.class));
+                SharedPreferences sf_user=getSharedPreferences(preference_user, Context.MODE_PRIVATE);
+
+
+                final   SharedPreferences.Editor editor2 = sf_user.edit();
+                editor2.putString(saveit_user,"0" );
+                editor2.commit();
+                SharedPreferences sf_pass=getSharedPreferences(preference_pass, Context.MODE_PRIVATE);
+
+
+                final   SharedPreferences.Editor editor3 = sf_pass.edit();
+                editor3.putString(saveit_pass,"0" );
+                editor3.commit();
+                startActivity(new Intent(evarsity.this,branch_year.class));
 
             }
         });
@@ -55,7 +73,7 @@ TextView loge;
         @Override
         protected Void doInBackground(Void... arg0) {
             try{
-                 document= Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp?txtRegNumber=iamalsouser&txtPwd=thanksandregards&txtSN=P"+txtRegno.getText().toString()+"&txtPD="+txtPwd.getText().toString()+"&txtPA=1").timeout(10000).get();
+                 document= Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp?txtRegNumber=iamalsouser&txtPwd=thanksandregards&txtSN=P"+txtRegno.getText().toString()+"&txtPD="+txtPwd.getText().toString()+"&txtPA=1").timeout(100000).get();
 
                    x=document.select("title").text().toString().trim();
                 runOnUiThread(new Runnable(){
@@ -64,10 +82,24 @@ TextView loge;
                     public void run(){
                         if (x.equals("::SRM Institute of Science and Technology - Student Web Interface - Beta::")) {
                             System.out.println("OK");
-                            Toast.makeText(evarsity.this, "kaam set", Toast.LENGTH_SHORT).show();
+                            SharedPreferences sf_user=getSharedPreferences(preference_user, Context.MODE_PRIVATE);
+
+
+                            final   SharedPreferences.Editor editor2 = sf_user.edit();
+                            editor2.putString(saveit_user,txtRegno.getText().toString() );
+                            editor2.commit();
+                            SharedPreferences sf_pass=getSharedPreferences(preference_pass, Context.MODE_PRIVATE);
+
+
+                            final   SharedPreferences.Editor editor3 = sf_pass.edit();
+                            editor3.putString(saveit_pass,txtPwd.getText().toString() );
+                            editor3.commit();
+                            Toast.makeText(evarsity.this, "Login Completed", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(evarsity.this,branch_year.class));
+
                         }
                         else
-                            Toast.makeText(evarsity.this, "Lag gaye", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(evarsity.this, "Username or Password incorrect", Toast.LENGTH_SHORT).show();
 
 
                     }
@@ -83,7 +115,7 @@ TextView loge;
 
                     @Override
                     public void run(){
-                        Toast.makeText(evarsity.this, "Server", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(evarsity.this, "Either the server SUCKS or your internet ", Toast.LENGTH_SHORT).show();
                     }
                 });
 

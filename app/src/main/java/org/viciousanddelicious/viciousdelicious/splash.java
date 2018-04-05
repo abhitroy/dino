@@ -58,7 +58,7 @@ public class splash extends AppCompatActivity {
                     String x = sf.getString(saveit, "");
                     String y = sf1.getString(saveit1, "");
                     if (x.equals("SELECT YOUR DEPARTMENT") || y.equals("SELECT YOUR YEAR")) {
-                        startActivity(new Intent(splash.this, Profile.class));
+                        startActivity(new Intent(splash.this, evarsity.class));
                     }
                     else
                         startActivity(new Intent(splash.this,MainActivity.class));

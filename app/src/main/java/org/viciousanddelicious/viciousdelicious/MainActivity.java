@@ -18,6 +18,9 @@ import android.widget.Toast;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
+import static org.viciousanddelicious.viciousdelicious.evarsity.preference_user;
+import static org.viciousanddelicious.viciousdelicious.evarsity.saveit_user;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
        final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
         circlemenu.setMainMenu(Color.parseColor("#ffffff"),R.drawable.vnd,R.drawable.multiply)

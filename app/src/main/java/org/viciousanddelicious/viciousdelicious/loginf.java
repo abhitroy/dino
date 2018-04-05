@@ -127,7 +127,7 @@ public class loginf extends AppCompatActivity {
 
                             user = FirebaseAuth.getInstance().getCurrentUser();
                             if (user.isEmailVerified()) {
-                                Intent i = new Intent(loginf.this,  branch_year.class);
+                                Intent i = new Intent(loginf.this,  evarsity.class);
                                 Toast.makeText(loginf.this, "Login successful", Toast.LENGTH_LONG).show();
                                 i.putExtra("Email", mAuth.getCurrentUser().getEmail());
                                 startActivity(i);
@@ -156,7 +156,7 @@ public class loginf extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
-                Intent i=new Intent(loginf.this,branch_year.class);
+                Intent i=new Intent(loginf.this,evarsity.class);
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
                 startActivity(i);
@@ -180,7 +180,7 @@ public class loginf extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(new Intent(loginf.this,branch_year.class));
+                            startActivity(new Intent(loginf.this,evarsity.class));
 
                         } else {
                             // If sign in fails, display a message to the user.
