@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static org.viciousanddelicious.viciousdelicious.timetable.intent_jugaad;
 import static org.viciousanddelicious.viciousdelicious.timetable.preference_day;
 import static org.viciousanddelicious.viciousdelicious.timetable.saveit_day;
 
@@ -34,6 +37,14 @@ public class day_order extends AppCompatActivity {
         String book_cover = sf3.getString(saveit_day,"");
         Toast.makeText(this, book_cover, Toast.LENGTH_SHORT).show();
         System.out.println("hello");
+        for (int i=3;i<=7;i++) {
+            ArrayList<String> arr = this.getIntent().getStringArrayListExtra(Integer.toString(i));
+
+            System.out.println(arr);
+        }
+
+
+
         new fetcher().execute();
 
 
