@@ -101,6 +101,7 @@ public class logbook extends AppCompatActivity {
         Elements days=null;
         Element row=null;
         Elements cols=null;
+        Element table1=null;
         @Override
         protected Void doInBackground(Void... arg0) {
             try {
@@ -120,7 +121,7 @@ public class logbook extends AppCompatActivity {
 
                 doc = Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=5").cookies(cookies).get();
                 table = doc.select("table").get(0); //select the first table.
-
+                table1=doc.select("table").get(1);
                 days = table.select("tr");
 
 

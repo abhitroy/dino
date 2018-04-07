@@ -16,9 +16,8 @@
         android:divider="@android:color/transparent"
         android:id="@+id/list_of_hours"
         tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
+         tools:layout_editor_absoluteX="8dp"
         android:layout_above="@+id/textInputLayout"
-        android:stackFromBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"/>
