@@ -102,6 +102,9 @@ public class logbook extends AppCompatActivity {
         Element row=null;
         Elements cols=null;
         Element table1=null;
+        Elements days1=null;
+        ArrayList<String> sub=new ArrayList<String>();
+        ArrayList<String> code=new ArrayList<String>();
         @Override
         protected Void doInBackground(Void... arg0) {
             try {
@@ -123,6 +126,17 @@ public class logbook extends AppCompatActivity {
                 table = doc.select("table").get(0); //select the first table.
                 table1=doc.select("table").get(1);
                 days = table.select("tr");
+                days1=table1.select("tr");
+                for (int i=2;i<days1.size();i++)
+                {
+                    Element x=days1.get(i);
+                    Elements y=x.select("td");
+                    code.add(y.get(0).text().toString());
+                    sub.add(y.get(1).text().toString());
+
+
+                }
+
 
 
             } catch (Exception e) {
@@ -142,6 +156,10 @@ public class logbook extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result)
         {
+            System.out.println(code);
+            System.out.println(sub);
+            String temp[]=sub.toArray(new String[0]);
+            String temp1[]=code.toArray(new String[0]);
 try {
     Intent intent = new Intent(getApplicationContext(), timetable.class);
     for (int f = 3; f <= 7; f++) {
@@ -163,7 +181,15 @@ try {
                 String s2;
                 for (int j = 0; j < s.length; j++) {
                     s2 = s[j].trim();
-                    hash.add(s2);
+                    int index=2;
+                    for (int l=0;l<temp1.length;l++) {
+                        if (temp1[l].equals(s2)) {
+                            index = l;
+                            break;
+                        }
+                    }
+                    hash.add(temp[index]);
+
                 }
 
                 list.addAll(hash);
