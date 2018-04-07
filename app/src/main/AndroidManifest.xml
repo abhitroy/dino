@@ -68,7 +68,8 @@
             android:theme="@style/AppTheme.new" />
         <activity android:name=".timetable" />
         <activity android:name=".day_order" />
-        <activity android:name=".evarsity"></activity>
+        <activity android:name=".evarsity" />
+        <activity android:name=".attendence"></activity>
     </application>
 
 </manifest>

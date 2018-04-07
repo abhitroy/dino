@@ -1,7 +1,9 @@
 package org.viciousanddelicious.viciousdelicious;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -27,17 +29,33 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 
+import static org.viciousanddelicious.viciousdelicious.evarsity.preference_pass;
+import static org.viciousanddelicious.viciousdelicious.evarsity.preference_user;
+import static org.viciousanddelicious.viciousdelicious.evarsity.saveit_pass;
+import static org.viciousanddelicious.viciousdelicious.evarsity.saveit_user;
+
 public class logbook extends AppCompatActivity {
 
     private TextView txt;
 
     String ArrayName[]={"Time Table","Attendance","Grade"};
     ProgressDialog pd;
+    String user="";
+    String pass="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logbook);
+        final SharedPreferences sf_pass=getSharedPreferences(preference_pass, Context.MODE_PRIVATE);
+         pass = sf_pass.getString(saveit_pass,"");
+
+        final SharedPreferences sf_user=getSharedPreferences(preference_user, Context.MODE_PRIVATE);
+         user = sf_user.getString(saveit_user,"");
+        Toast.makeText(this, user, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
+
+
         final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu_log);
         circlemenu.setMainMenu(Color.parseColor("#81C784"),R.drawable.log,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#81D4FA"),R.drawable.timetable)
@@ -90,9 +108,9 @@ public class logbook extends AppCompatActivity {
                         .connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp")
                         .data("txtRegNumber", "iamalsouser")
                         .data("txtPwd", "thanksandregards")
-                        .data("txtSN", "PRA1611003040056")
+                        .data("txtSN", user)
 
-                        .data("txtPD", "07061998")
+                        .data("txtPD", pass)
                         .data("txtPA", "1")
                         .method(Connection.Method.GET)
                         .execute();

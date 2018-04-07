@@ -56,8 +56,11 @@ public class MainActivity extends AppCompatActivity {
                             new Handler().postDelayed(new Runnable() {
                                                           @Override
                                                           public void run() {
-                                                              if (x==0)
-                                                              startActivity(new Intent(MainActivity.this,logbook.class));
+                                                              if (x==0) {
+                                                                  Intent i=new Intent(MainActivity.this, logbook.class);
+                                                                  i.putExtra("ch","valuesssss");
+                                                                  startActivity(i);
+                                                              }
                                                               if (x==1)
                                                                   startActivity(new Intent(MainActivity.this,supply.class));
                                                               if (x==2)

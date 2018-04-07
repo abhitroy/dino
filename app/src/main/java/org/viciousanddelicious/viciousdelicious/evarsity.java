@@ -73,7 +73,7 @@ TextView loge;
         @Override
         protected Void doInBackground(Void... arg0) {
             try{
-                 document= Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp?txtRegNumber=iamalsouser&txtPwd=thanksandregards&txtSN=P"+txtRegno.getText().toString()+"&txtPD="+txtPwd.getText().toString()+"&txtPA=1").timeout(100000).get();
+                 document= Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp?txtRegNumber=iamalsouser&txtPwd=thanksandregards&txtSN="+txtRegno.getText().toString()+"&txtPD="+txtPwd.getText().toString()+"&txtPA=1").timeout(100000).get();
 
                    x=document.select("title").text().toString().trim();
                 runOnUiThread(new Runnable(){

@@ -37,7 +37,7 @@ public class day_order extends AppCompatActivity {
         Toast.makeText(this, d, Toast.LENGTH_SHORT).show();
             ArrayList<String> arr = this.getIntent().getStringArrayListExtra(d);
 
-            System.out.println(arr);
+            System.out.println(arr.get(0));
 
 
 
