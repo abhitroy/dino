@@ -56,7 +56,7 @@ public class timetable extends AppCompatActivity {
 
 
         CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu_timetable);
-        circlemenu.setMainMenu(Color.parseColor("#ffffff"),R.drawable.timetable,R.drawable.multiply)
+        circlemenu.setMainMenu(Color.parseColor("#FFF176"),R.drawable.timetable,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#ffffff"),R.drawable.day1)
                 .addSubMenu(Color.parseColor("#ffffff"),R.drawable.day2)
                 .addSubMenu(Color.parseColor("#ffffff"),R.drawable.day3)

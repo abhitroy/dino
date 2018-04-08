@@ -36,7 +36,6 @@ import static org.viciousanddelicious.viciousdelicious.evarsity.saveit_user;
 
 public class logbook extends AppCompatActivity {
 
-    private TextView txt;
 
     String ArrayName[]={"Time Table","Attendance","Grade"};
     ProgressDialog pd;
@@ -58,9 +57,9 @@ public class logbook extends AppCompatActivity {
 
         final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu_log);
         circlemenu.setMainMenu(Color.parseColor("#81C784"),R.drawable.log,R.drawable.multiply)
-                .addSubMenu(Color.parseColor("#81D4FA"),R.drawable.timetable)
-                .addSubMenu(Color.parseColor("#FFF176"),R.drawable.attendence)
-                .addSubMenu(Color.parseColor("#e57373"),R.drawable.grade)
+                .addSubMenu(Color.parseColor("#e57373"),R.drawable.attendence)
+                .addSubMenu(Color.parseColor("#FFF176"),R.drawable.timetable)
+                .addSubMenu(Color.parseColor("#81D4FA"),R.drawable.grade)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
 
                     @Override
@@ -71,11 +70,14 @@ public class logbook extends AppCompatActivity {
                             @Override
                             public void run() {
                                 if (x==0) {
+                                    startActivity(new Intent(logbook.this,supply.class));
+                                }
+                                if (x==1)
+                                {
                                     pd = ProgressDialog.show(logbook.this, "", "Please wait...", true);
                                     new fetcheryt().execute();
                                 }
-                                if (x==1)
-                                    startActivity(new Intent(logbook.this,supply.class));
+
                                 if (x==2)
                                     startActivity(new Intent(logbook.this,Profile.class));
                             }
@@ -86,13 +88,6 @@ public class logbook extends AppCompatActivity {
                     }
                 });
 
-        txt = (TextView) findViewById(R.id.pref_log);
-        txt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(logbook.this, branch_year.class));
-            }
-        });
 
     }
     class fetcheryt extends AsyncTask<Void,Void,Void> {
@@ -219,7 +214,7 @@ catch (Exception e)
 
         @Override
         public void run(){
-            Toast.makeText(logbook.this, "Either the server SUCKS or your internet ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(logbook.this, "No Record found ", Toast.LENGTH_SHORT).show();
             pd.dismiss();
         }
     });

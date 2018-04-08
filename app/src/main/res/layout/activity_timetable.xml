@@ -4,28 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0097A7"
+    android:background="#FFB74D"
     tools:context="org.viciousanddelicious.viciousdelicious.timetable">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pref"
-        android:textSize="15dp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textStyle="italic"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:id="@+id/pref_main"
-        />
 
     <RelativeLayout
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:background="@drawable/btnbg"
         android:layout_centerInParent="true"
-        android:backgroundTint="#E0E0E0"></RelativeLayout>
+        android:backgroundTint="#FFFFFF"></RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

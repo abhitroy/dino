@@ -2,21 +2,8 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/mainbg"
+    android:background="@drawable/supply_bg"
     tools:context="org.viciousanddelicious.viciousdelicious.supply">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pref"
-        android:textSize="15dp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textStyle="italic"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:id="@+id/pref_supply"
-        />
 
     <RelativeLayout
         android:layout_width="110dp"

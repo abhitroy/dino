@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
        final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
         circlemenu.setMainMenu(Color.parseColor("#ffffff"),R.drawable.vnd,R.drawable.multiply)
-                .addSubMenu(Color.parseColor("#81C784"),R.drawable.log)
-                .addSubMenu(Color.parseColor("#FFF176"),R.drawable.supplies)
-                .addSubMenu(Color.parseColor("#e57373"),R.drawable.explore)
+                .addSubMenu(Color.parseColor("#e57373"),R.drawable.log)
+                .addSubMenu(Color.parseColor("#81C784"),R.drawable.supplies)
+                .addSubMenu(Color.parseColor("#FFF176"),R.drawable.explore)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
                     @Override
                     public void onMenuSelected(int i) {

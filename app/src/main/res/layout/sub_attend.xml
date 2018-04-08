@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="310dp"
+        android:background="@drawable/hour_card"
+        android:elevation="30dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:progress="50"
+            android:progressBackgroundTint="#FFFFFF"
+            android:progressDrawable="@drawable/circle_shape"
+            />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Algorithm Design And Analysis"
+            android:textAlignment="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Total percentage:75%"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/total"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Max. Hours:75%"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/maxhr"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Att. Hours:75%"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/atthr"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Absent Hours:75%"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/abshr"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Avg. percent:75%"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/Avg_percent"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="OD/ML Percent:75%"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/od_percent"/>
+    </LinearLayout>
+
+</RelativeLayout>
