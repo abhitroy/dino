@@ -41,7 +41,7 @@ public class logbook extends AppCompatActivity {
     ProgressDialog pd;
     String user="";
     String pass="";
-
+    static Subject[] subjects;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -255,9 +255,9 @@ catch (Exception e)
                 //Get cookies
                 Map<String, String> cookies = res.cookies();
 
-                doc = Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=5").cookies(cookies).get();
+                doc = Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=7").cookies(cookies).get();
                 table = doc.select("table").get(0); //select the first table.
-                all = table.select("tr");
+
 
 
 
@@ -282,15 +282,26 @@ catch (Exception e)
 
             try {
                 Intent intent = new Intent(getApplicationContext(), timetable.class);
-
-                cols=all.select("td");
-                for (int i=0;i<cols.size();i++)
+                all = table.select("tr");
+                subjects = new Subject[all.size()-4];
+                for (int i1 = 0; i1 < all.size()-4; i1++)
                 {
-
-               System.out.println(cols.get(i).text());
+                for (int j=3;j<all.size()-1;j++) {
+                    row=all.get(j);
+                    cols=row.select("td");
+                    int k=-1;
+                    subjects[i1] = new Subject();
+                    subjects[i1].setSubjectcode(cols.get(++k).text().toString());
+                    subjects[i1].setSubjectname(cols.get(++k).text().toString());
+                    subjects[i1].setMaxhours(cols.get(++k).text().toString());
+                    subjects[i1].setAtthours(cols.get(++k).text().toString());
+                    subjects[i1].setAbsenthours(cols.get(++k).text().toString());
+                    subjects[i1].setAverage(cols.get(++k).text().toString());
+                    subjects[i1].setOD_ML(cols.get(++k).text().toString());
+                    subjects[i1].setTotal(cols.get(++k).text().toString());
+                    }
 
                 }
-
 
 
 
