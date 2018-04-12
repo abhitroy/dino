@@ -51,6 +51,10 @@ public class logbook extends AppCompatActivity {
 
         final SharedPreferences sf_user=getSharedPreferences(preference_user, Context.MODE_PRIVATE);
          user = sf_user.getString(saveit_user,"");
+         if (user.equals("0")||pass.equals("0"))
+         {
+             startActivity(new Intent(logbook.this,evarsity.class));
+         }
         Toast.makeText(this, user, Toast.LENGTH_SHORT).show();
         Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
 
@@ -69,17 +73,18 @@ public class logbook extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                if (x==0) {
-                                    startActivity(new Intent(logbook.this,supply.class));
+                                if (x == 0) {
+                                    startActivity(new Intent(logbook.this, supply.class));
                                 }
-                                if (x==1)
-                                {
+                                if (x == 1) {
                                     pd = ProgressDialog.show(logbook.this, "", "Please wait...", true);
                                     new fetcheryt().execute();
                                 }
 
-                                if (x==2)
-                                    startActivity(new Intent(logbook.this,Profile.class));
+                                if (x == 2) {
+                                    pd = ProgressDialog.show(logbook.this, "", "Please wait...", true);
+                                    new fetcherya().execute();
+                                }
                             }
                         },1000);
 
@@ -122,6 +127,8 @@ public class logbook extends AppCompatActivity {
                 table1=doc.select("table").get(1);
                 days = table.select("tr");
                 days1=table1.select("tr");
+                code.add("-");
+                sub.add("-");
                 for (int i=2;i<days1.size();i++)
                 {
                     Element x=days1.get(i);
@@ -223,4 +230,87 @@ catch (Exception e)
         }
 
     }
+    class fetcherya extends AsyncTask<Void,Void,Void> {
+        private Document doc=null;
+        Element table=null;
+        Elements all=null;
+        Element row=null;
+        Elements cols=null;
+        ArrayList<String> sub=new ArrayList<String>();
+        ArrayList<String> code=new ArrayList<String>();
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            try {
+                Connection.Response res = Jsoup
+                        .connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp")
+                        .data("txtRegNumber", "iamalsouser")
+                        .data("txtPwd", "thanksandregards")
+                        .data("txtSN", user)
+
+                        .data("txtPD", pass)
+                        .data("txtPA", "1")
+                        .method(Connection.Method.GET)
+                        .execute();
+
+                //Get cookies
+                Map<String, String> cookies = res.cookies();
+
+                doc = Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=5").cookies(cookies).get();
+                table = doc.select("table").get(0); //select the first table.
+                all = table.select("tr");
+
+
+
+
+            } catch (Exception e) {
+                System.err.println(e);
+
+                runOnUiThread(new Runnable(){
+
+                    @Override
+                    public void run(){
+                        Toast.makeText(logbook.this, "Either the server SUCKS or your internet ", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void result)
+        {
+
+            try {
+                Intent intent = new Intent(getApplicationContext(), timetable.class);
+
+                cols=all.select("td");
+                for (int i=0;i<cols.size();i++)
+                {
+
+               System.out.println(cols.get(i).text());
+
+                }
+
+
+
+
+
+                pd.dismiss();
+            }
+            catch (Exception e)
+            {
+                runOnUiThread(new Runnable(){
+
+                    @Override
+                    public void run(){
+                        Toast.makeText(logbook.this, "No Record found ", Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
+                    }
+                });
+            }
+
+        }
+
+    }
+
 }

@@ -1,5 +1,6 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,7 @@ public class evarsity extends AppCompatActivity {
 EditText txtRegno;
 EditText txtPwd;
 TextView loge;
+ProgressDialog pd;
     public static final String preference_user="pref_user";
     public static final String saveit_user="savekey_user";
     public static final String preference_pass="pref_pass";
@@ -36,6 +38,8 @@ TextView loge;
         loge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pd = ProgressDialog.show(evarsity.this, "", "Please wait...", true);
+
                 check();
 
             }
@@ -95,6 +99,7 @@ TextView loge;
                             editor3.putString(saveit_pass,txtPwd.getText().toString() );
                             editor3.commit();
                             Toast.makeText(evarsity.this, "Login Completed", Toast.LENGTH_SHORT).show();
+                            pd.dismiss();
                             startActivity(new Intent(evarsity.this,branch_year.class));
 
                         }
