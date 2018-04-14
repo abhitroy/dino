@@ -1,5 +1,6 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -18,7 +21,10 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.itangqi.waveloadingview.WaveLoadingView;
+
 public class attendence extends AppCompatActivity {
+   WaveLoadingView wave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +39,19 @@ public class attendence extends AppCompatActivity {
         */
          ArrayList<Subject> data = (ArrayList<Subject>) getIntent().getSerializableExtra("attendance");
 
-
+        String t=getIntent().getExtras().getString("total");
         GridView list = (GridView) findViewById(R.id.list_of_attendence);
 
 
         ArrayAdapter adapter = new CustomAdapter(this, R.layout.sub_attend, data);
 
         list.setAdapter(adapter);
+
+        wave=(WaveLoadingView)findViewById(R.id.attend_progress);
+        wave.setProgressValue(0);
+        wave.setProgressValue((int)Double.parseDouble(t));
+
+
     }
 
     public class CustomAdapter extends ArrayAdapter<Subject> {
@@ -69,14 +81,14 @@ public class attendence extends AppCompatActivity {
             TextView avgp=(TextView)row.findViewById(R.id.Avg_percent);
             TextView odp=(TextView)row.findViewById(R.id.od_percent);
             TextView subcode=(TextView)row.findViewById(R.id.subcode);
-            title.setText(data.get(position).subjectname);
-            total.setText(data.get(position).total);
-            max.setText(data.get(position).maxhours);
-            atthr.setText(data.get(position).atthours);
-            abshr.setText(data.get(position).absenthours);
-            avgp.setText(data.get(position).average);
-            odp.setText(data.get(position).OD_ML);
-            subcode.setText(data.get(position).subjectcode);
+            title.setText("Subject name:\n"+data.get(position).subjectname);
+            total.setText("Tot. Percentage: "+data.get(position).total);
+            max.setText("Total Hours:"+data.get(position).maxhours);
+            atthr.setText("Attended Hours: "+data.get(position).atthours);
+            abshr.setText("Absent Hours: "+data.get(position).absenthours);
+            avgp.setText("Avg. Percentage: "+data.get(position).average);
+            odp.setText("OD/ML Percentage: "+data.get(position).OD_ML);
+            subcode.setText("Subject Code: "+data.get(position).subjectcode);
 
 
             return row;

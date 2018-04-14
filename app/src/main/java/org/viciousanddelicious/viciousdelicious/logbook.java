@@ -313,6 +313,11 @@ catch (Exception e)
 
 
                 }
+                Element row1=all.get(all.size()-1);
+                Elements cols1=row1.select("td");
+                String jug=cols1.get(cols1.size()-1).text().toString();
+                intent.putExtra("total",jug);
+
 
 
 

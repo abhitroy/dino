@@ -7,6 +7,32 @@
     tools:context="org.viciousanddelicious.viciousdelicious.attendence">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/rel_attend"
+        android:gravity="center">
+
+       <me.itangqi.waveloadingview.WaveLoadingView
+           android:layout_width="170dp"
+           android:layout_height="170dp"
+           android:id="@+id/attend_progress"
+           app:wlv_borderColor="@color/colorPrimary"
+           app:wlv_borderWidth="3dp"
+           app:wlv_shapeType="circle"
+           app:wlv_round_rectangle="true"
+           app:wlv_triangle_direction="north"
+           app:wlv_waveAmplitude="80"
+           app:wlv_waveColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="Total percentage: 75%"
+            android:layout_below="@+id/attend_progress"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,5 +42,6 @@
         android:numColumns="2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/rel_attend"/>
 </RelativeLayout>

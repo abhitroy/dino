@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-       final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
+
+      final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
         circlemenu.setMainMenu(Color.parseColor("#ffffff"),R.drawable.vnd,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#e57373"),R.drawable.log)
                 .addSubMenu(Color.parseColor("#81C784"),R.drawable.supplies)
