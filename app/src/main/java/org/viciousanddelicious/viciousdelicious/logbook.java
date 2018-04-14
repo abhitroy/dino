@@ -55,8 +55,6 @@ public class logbook extends AppCompatActivity {
          {
              startActivity(new Intent(logbook.this,evarsity.class));
          }
-        Toast.makeText(this, user, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
 
 
         final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu_log);

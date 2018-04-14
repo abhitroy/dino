@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +23,7 @@ public class evarsity extends AppCompatActivity {
 
 EditText txtRegno;
 EditText txtPwd;
-TextView loge;
+ImageButton loge;
 ProgressDialog pd;
     public static final String preference_user="pref_user";
     public static final String saveit_user="savekey_user";
@@ -33,7 +36,7 @@ ProgressDialog pd;
         setContentView(R.layout.activity_evarsity);
         txtRegno = (EditText) findViewById(R.id.reg);
         txtPwd = (EditText) findViewById(R.id.pass);
-        loge=(TextView) findViewById(R.id.loge);
+        loge=(ImageButton) findViewById(R.id.loge);
         ski=(TextView) findViewById(R.id.skip);
         loge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +101,7 @@ ProgressDialog pd;
                             final   SharedPreferences.Editor editor3 = sf_pass.edit();
                             editor3.putString(saveit_pass,txtPwd.getText().toString() );
                             editor3.commit();
-                            Toast.makeText(evarsity.this, "Login Completed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(evarsity.this, "Successfully Authenticated", Toast.LENGTH_SHORT).show();
                             pd.dismiss();
                             startActivity(new Intent(evarsity.this,branch_year.class));
 

@@ -21,7 +21,7 @@ public class marks extends AppCompatActivity {
             temp[i]=array[i];
         }
       ListView listView = (ListView)findViewById(R.id.number);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1,temp );
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.two_line_list_item, android.R.id.text1,temp );
 
         listView.setAdapter(adapter);
     }

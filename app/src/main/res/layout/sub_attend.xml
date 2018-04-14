@@ -3,10 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/card_sub"
-        android:layout_width="170dp"
-        android:layout_height="310dp"
+        android:layout_width="180dp"
+        android:layout_height="330dp"
         android:background="@drawable/hour_card"
         android:elevation="20dp"
         android:layout_marginLeft="15dp"
@@ -23,7 +23,8 @@
             android:layout_gravity="center"
             android:id="@+id/title"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -32,7 +33,9 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:id="@+id/subcode"
-            android:textColor="@color/black"/>
+            android:layout_below="@+id/title"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
             android:layout_width="150dp"
@@ -42,7 +45,9 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:id="@+id/total"
-            android:textColor="@color/black"/>
+            android:layout_below="@+id/subcode"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
             android:layout_width="150dp"
@@ -51,8 +56,10 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
+            android:layout_below="@+id/total"
             android:id="@+id/maxhr"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
             android:layout_width="150dp"
@@ -62,7 +69,9 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:id="@+id/atthr"
-            android:textColor="@color/black"/>
+            android:layout_below="@+id/maxhr"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
             android:layout_width="150dp"
@@ -72,7 +81,9 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:id="@+id/abshr"
-            android:textColor="@color/black"/>
+            android:layout_below="@+id/atthr"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
             android:layout_width="150dp"
@@ -81,8 +92,10 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/Avg_percent"
-            android:textColor="@color/black"/>
+            android:layout_below="@+id/abshr"
+            android:id="@+id/avg_percent"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
             android:layout_width="150dp"
@@ -92,7 +105,9 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:id="@+id/od_percent"
-            android:textColor="@color/black"/>
-    </LinearLayout>
+            android:layout_below="@+id/avg_percent"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"/>
+    </RelativeLayout>
 
 </RelativeLayout>

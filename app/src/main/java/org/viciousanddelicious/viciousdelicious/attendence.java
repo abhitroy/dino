@@ -17,6 +17,7 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -86,10 +87,10 @@ public class attendence extends AppCompatActivity {
             TextView max=(TextView)row.findViewById(R.id.maxhr);
             TextView atthr=(TextView)row.findViewById(R.id.atthr);
             TextView abshr=(TextView)row.findViewById(R.id.abshr);
-            TextView avgp=(TextView)row.findViewById(R.id.Avg_percent);
+            TextView avgp=(TextView)row.findViewById(R.id.avg_percent);
             TextView odp=(TextView)row.findViewById(R.id.od_percent);
             TextView subcode=(TextView)row.findViewById(R.id.subcode);
-            title.setText("Subject name:\n"+data.get(position).subjectname);
+            title.setText("Subject Name:\n"+data.get(position).subjectname);
             total.setText("Tot. Percentage: "+data.get(position).total);
             max.setText("Total Hours:"+data.get(position).maxhours);
             atthr.setText("Attended Hours: "+data.get(position).atthours);
@@ -97,17 +98,17 @@ public class attendence extends AppCompatActivity {
             avgp.setText("Avg. Percentage: "+data.get(position).average);
             odp.setText("OD/ML Percentage: "+data.get(position).OD_ML);
             subcode.setText("Subject Code: "+data.get(position).subjectcode);
-            LinearLayout lin=(LinearLayout)row.findViewById(R.id.card_sub);
+            RelativeLayout lin=(RelativeLayout)row.findViewById(R.id.card_sub);
 
-            if (Double.parseDouble(data.get(position).total)<85)
+            if (Double.parseDouble(data.get(position).total)<65)
             {
                 lin.setBackgroundResource(R.drawable.hour_card_less);
             }
-            if (Double.parseDouble(data.get(position).total)>90)
+            if (Double.parseDouble(data.get(position).total)>=65&&Double.parseDouble(data.get(position).total)<=75)
             {
                 lin.setBackgroundResource(R.drawable.hour_card_avg);
             }
-            if (Double.parseDouble(data.get(position).total)>90)
+            if (Double.parseDouble(data.get(position).total)>75)
             {
                 lin.setBackgroundResource(R.drawable.hour_card_ok);
             }

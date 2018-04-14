@@ -100,7 +100,8 @@
             android:screenOrientation="portrait"
             />
         <activity android:name=".marks"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
