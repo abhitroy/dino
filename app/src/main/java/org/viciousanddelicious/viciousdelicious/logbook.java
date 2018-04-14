@@ -238,6 +238,7 @@ catch (Exception e)
         Elements cols=null;
         ArrayList<String> sub=new ArrayList<String>();
         ArrayList<String> code=new ArrayList<String>();
+        ArrayList<Subject> value=new ArrayList<Subject>();
         @Override
         protected Void doInBackground(Void... arg0) {
             try {
@@ -281,25 +282,35 @@ catch (Exception e)
         {
 
             try {
-                Intent intent = new Intent(getApplicationContext(), timetable.class);
+                Intent intent = new Intent(logbook.this, attendence.class);
                 all = table.select("tr");
                 subjects = new Subject[all.size()-4];
-                for (int i1 = 0; i1 < all.size()-4; i1++)
+
+                for (int i1=0, j=3;i1<all.size()-4&&j<all.size()-1;i1++,j++)
                 {
-                for (int j=3;j<all.size()-1;j++) {
+
+
+          //      for (int i1 = 0; i1 < all.size()-4; i1++)
+           //     {
+           //     for (int j=3;j<all.size()-1;j++) {
                     row=all.get(j);
                     cols=row.select("td");
                     int k=-1;
-                    subjects[i1] = new Subject();
+
+                    value.add(new Subject(cols.get(++k).text().toString(),cols.get(++k).text().toString(),cols.get(++k).text().toString(),cols.get(++k).text().toString(),cols.get(++k).text().toString(),cols.get(++k).text().toString(),cols.get(++k).text().toString(),cols.get(++k).text().toString()));
+
+
+         /*           subjects[i1] = new Subject();
                     subjects[i1].setSubjectcode(cols.get(++k).text().toString());
+                    System.out.println(cols.get(0).text().toString());
                     subjects[i1].setSubjectname(cols.get(++k).text().toString());
                     subjects[i1].setMaxhours(cols.get(++k).text().toString());
                     subjects[i1].setAtthours(cols.get(++k).text().toString());
                     subjects[i1].setAbsenthours(cols.get(++k).text().toString());
                     subjects[i1].setAverage(cols.get(++k).text().toString());
                     subjects[i1].setOD_ML(cols.get(++k).text().toString());
-                    subjects[i1].setTotal(cols.get(++k).text().toString());
-                    }
+                    subjects[i1].setTotal(cols.get(++k).text().toString());  */
+
 
                 }
 
@@ -307,14 +318,19 @@ catch (Exception e)
 
 
                 pd.dismiss();
+                intent.putExtra("attendance",value);
+                System.out.println(".........................");
+                startActivity(intent);
             }
             catch (Exception e)
             {
+                System.out.println(e);
                 runOnUiThread(new Runnable(){
 
                     @Override
                     public void run(){
                         Toast.makeText(logbook.this, "No Record found ", Toast.LENGTH_SHORT).show();
+
                         pd.dismiss();
                     }
                 });

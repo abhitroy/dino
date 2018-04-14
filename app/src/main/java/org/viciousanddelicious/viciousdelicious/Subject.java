@@ -1,10 +1,12 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import java.io.Serializable;
+
 /**
  * Created by rahul on 12/4/18.
  */
 
-public class Subject {
+public class Subject implements Serializable {
 
         String OD_ML;
         String absenthours;
@@ -12,14 +14,27 @@ public class Subject {
         String average;
         String maxhours;
         String subjectcode;
-        String subjectmarks;
+
         String subjectname;
         String total;
+
+        Subject(String subjectcode,String subjectname,String maxhours,String atthours,String absenthours,String average,String OD_ML,String total)
+        {
+            this.OD_ML=OD_ML;
+            this.absenthours=absenthours;
+            this.atthours=atthours;
+            this.average=average;
+            this.maxhours=maxhours;
+            this.subjectcode=subjectcode;
+            this.subjectname=subjectname;
+            this.total=total;
+        }
 
         void setAbsenthours(String paramString)
         {
             this.absenthours = paramString;
         }
+
 
         void setAtthours(String paramString)
         {
@@ -46,10 +61,7 @@ public class Subject {
             this.subjectcode = paramString;
         }
 
-        void setSubjectmarks(String paramString)
-        {
-            this.subjectmarks = paramString;
-        }
+
 
         void setSubjectname(String paramString)
         {
