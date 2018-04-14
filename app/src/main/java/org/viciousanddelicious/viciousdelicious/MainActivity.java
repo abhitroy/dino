@@ -18,7 +18,9 @@ import android.widget.Toast;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
+import static org.viciousanddelicious.viciousdelicious.evarsity.preference_pass;
 import static org.viciousanddelicious.viciousdelicious.evarsity.preference_user;
+import static org.viciousanddelicious.viciousdelicious.evarsity.saveit_pass;
 import static org.viciousanddelicious.viciousdelicious.evarsity.saveit_user;
 
 
@@ -58,9 +60,20 @@ public class MainActivity extends AppCompatActivity {
                                                           @Override
                                                           public void run() {
                                                               if (x==0) {
-                                                                  Intent i=new Intent(MainActivity.this, logbook.class);
-                                                                  i.putExtra("ch","valuesssss");
-                                                                  startActivity(i);
+                                                                  final SharedPreferences sf_pass=getSharedPreferences(preference_pass, Context.MODE_PRIVATE);
+                                                                  String pass = sf_pass.getString(saveit_pass,"");
+
+                                                                  final SharedPreferences sf_user=getSharedPreferences(preference_user, Context.MODE_PRIVATE);
+                                                                  String user = sf_user.getString(saveit_user,"");
+                                                                  if (user.equals("0")||pass.equals("0"))
+                                                                  {
+                                                                      startActivity(new Intent(MainActivity.this,evarsity.class));
+                                                                  }
+                                                                  else {
+                                                                      Intent i = new Intent(MainActivity.this, logbook.class);
+                                                                      i.putExtra("ch", "valuesssss");
+                                                                      startActivity(i);
+                                                                  }
                                                               }
                                                               if (x==1)
                                                                   startActivity(new Intent(MainActivity.this,supply.class));

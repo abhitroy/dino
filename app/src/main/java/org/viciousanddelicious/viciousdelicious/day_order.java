@@ -44,7 +44,6 @@ public class day_order extends AppCompatActivity {
         setContentView(R.layout.activity_day_order);
         SharedPreferences sf3=getSharedPreferences(preference_day, Context.MODE_PRIVATE);
         String d = sf3.getString(saveit_day,"");
-        Toast.makeText(this, d, Toast.LENGTH_SHORT).show();
         arr = this.getIntent().getStringArrayListExtra(d);
         sub=arr.toArray(new String[0]);
         listView=(ListView)findViewById(R.id.list_of_hours);

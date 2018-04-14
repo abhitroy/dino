@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,12 +43,23 @@ public class supply extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                if (x==0)
-                                    startActivity(new Intent(supply.this,website_ebook.class));
-                                if (x==1)
-                                    startActivity(new Intent(supply.this,website_crack.class));
+                                if (x == 0){
+                                    if (isNetworkAvailable()) {
+                                        startActivity(new Intent(supply.this, website_ebook.class));
+                                    }
+                                    else
+                                        Toast.makeText(supply.this, "Network Not available", Toast.LENGTH_SHORT).show();
+                            }
+                                if (x==1) {
+                                    if (isNetworkAvailable())
+                                    startActivity(new Intent(supply.this, website_crack.class));
+                                    else
+                                        Toast.makeText(supply.this, "Network Not Available", Toast.LENGTH_SHORT).show();
+                                }
                                 if (x==2)
+                                    if (isNetworkAvailable())
                                     startActivity(new Intent(supply.this,website.class));
+                                else Toast.makeText(supply.this, "Network Not Available", Toast.LENGTH_SHORT).show();
                             }
                         },1000);
 
@@ -55,5 +68,11 @@ public class supply extends AppCompatActivity {
                 });
 
 
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

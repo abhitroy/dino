@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -24,15 +25,19 @@
         </activity>
         <activity
             android:name=".option"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".loginf"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".registerf"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".forgot"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Profile"
@@ -40,47 +45,62 @@
         <activity android:name=".recycle" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.new" />
         <activity android:name=".contact" />
         <activity
             android:name=".branch_year"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".subject_choice" />
+        <activity android:name=".subject_choice"
+            android:screenOrientation="portrait"/>
         <activity android:name=".recycle_video" />
         <activity
             android:name=".rate"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".website"
-            android:theme="@style/AppTheme.new" />
+            android:theme="@style/AppTheme.new"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".website_crack"
-            android:theme="@style/AppTheme.new" />
+            android:theme="@style/AppTheme.new"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".website_ebook"
-            android:theme="@style/AppTheme.new" />
+            android:theme="@style/AppTheme.new"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".chatroom"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".logbook"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".supply"
-            android:theme="@style/AppTheme.new" />
+            android:theme="@style/AppTheme.new"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".timetable"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".day_order"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".evarsity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".attendence"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".marks"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".marks"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

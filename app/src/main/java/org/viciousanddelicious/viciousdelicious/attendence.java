@@ -3,6 +3,8 @@ package org.viciousanddelicious.viciousdelicious;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.support.annotation.ColorRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,6 +29,7 @@ import me.itangqi.waveloadingview.WaveLoadingView;
 public class attendence extends AppCompatActivity {
    WaveLoadingView wave;
     TextView total;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +78,7 @@ public class attendence extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             final Subject[] arrayOfSubject = logbook.subjects;
 
+
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             View row = inflater.inflate(R.layout.sub_attend, parent, false);
             TextView title=(TextView)row.findViewById(R.id.title);
@@ -92,6 +97,20 @@ public class attendence extends AppCompatActivity {
             avgp.setText("Avg. Percentage: "+data.get(position).average);
             odp.setText("OD/ML Percentage: "+data.get(position).OD_ML);
             subcode.setText("Subject Code: "+data.get(position).subjectcode);
+            LinearLayout lin=(LinearLayout)row.findViewById(R.id.card_sub);
+
+            if (Double.parseDouble(data.get(position).total)<85)
+            {
+                lin.setBackgroundResource(R.drawable.hour_card_less);
+            }
+            if (Double.parseDouble(data.get(position).total)>90)
+            {
+                lin.setBackgroundResource(R.drawable.hour_card_avg);
+            }
+            if (Double.parseDouble(data.get(position).total)>90)
+            {
+                lin.setBackgroundResource(R.drawable.hour_card_ok);
+            }
 
 
             return row;

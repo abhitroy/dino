@@ -103,8 +103,10 @@ ProgressDialog pd;
                             startActivity(new Intent(evarsity.this,branch_year.class));
 
                         }
-                        else
+                        else {
                             Toast.makeText(evarsity.this, "Username or Password incorrect", Toast.LENGTH_SHORT).show();
+                            pd.dismiss();
+                        }
 
 
                     }

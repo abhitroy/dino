@@ -22,7 +22,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:id="@+id/title"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -30,7 +31,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/subcode"/>
+            android:id="@+id/subcode"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="150dp"
@@ -39,7 +41,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/total"/>
+            android:id="@+id/total"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="150dp"
@@ -48,7 +51,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/maxhr"/>
+            android:id="@+id/maxhr"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="150dp"
@@ -57,7 +61,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/atthr"/>
+            android:id="@+id/atthr"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="150dp"
@@ -66,7 +71,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/abshr"/>
+            android:id="@+id/abshr"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="150dp"
@@ -75,7 +81,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/Avg_percent"/>
+            android:id="@+id/Avg_percent"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="150dp"
@@ -84,7 +91,8 @@
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:id="@+id/od_percent"/>
+            android:id="@+id/od_percent"
+            android:textColor="@color/black"/>
     </LinearLayout>
 
 </RelativeLayout>
