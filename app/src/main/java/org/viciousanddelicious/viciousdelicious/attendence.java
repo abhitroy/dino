@@ -25,6 +25,7 @@ import me.itangqi.waveloadingview.WaveLoadingView;
 
 public class attendence extends AppCompatActivity {
    WaveLoadingView wave;
+    TextView total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,8 @@ public class attendence extends AppCompatActivity {
         wave=(WaveLoadingView)findViewById(R.id.attend_progress);
         wave.setProgressValue(0);
         wave.setProgressValue((int)Double.parseDouble(t));
+        total=(TextView)findViewById(R.id.total_attend);
+        total.setText("Total Percentage: "+t);
 
 
     }

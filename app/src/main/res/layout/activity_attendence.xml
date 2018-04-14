@@ -31,7 +31,8 @@
             android:text="Total percentage: 75%"
             android:layout_below="@+id/attend_progress"
             android:gravity="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:id="@+id/total_attend"/>
     </RelativeLayout>
     <GridView
         android:layout_width="match_parent"
