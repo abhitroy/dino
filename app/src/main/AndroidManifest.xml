@@ -59,22 +59,28 @@
         <activity
             android:name=".website_ebook"
             android:theme="@style/AppTheme.new" />
-        <activity android:name=".chatroom"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".chatroom"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".logbook"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".supply"
             android:theme="@style/AppTheme.new" />
-        <activity android:name=".timetable"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".day_order"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".evarsity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".attendence"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".timetable"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".day_order"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".evarsity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".attendence"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".marks"></activity>
     </application>
 
 </manifest>

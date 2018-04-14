@@ -74,7 +74,9 @@ public class logbook extends AppCompatActivity {
                             @Override
                             public void run() {
                                 if (x == 0) {
-                                    startActivity(new Intent(logbook.this, supply.class));
+                                    pd = ProgressDialog.show(logbook.this, "", "Please wait...", true);
+                                    new fetcherya().execute();
+
                                 }
                                 if (x == 1) {
                                     pd = ProgressDialog.show(logbook.this, "", "Please wait...", true);
@@ -83,7 +85,7 @@ public class logbook extends AppCompatActivity {
 
                                 if (x == 2) {
                                     pd = ProgressDialog.show(logbook.this, "", "Please wait...", true);
-                                    new fetcherya().execute();
+                                    new fetcherym().execute();
                                 }
                             }
                         },1000);
@@ -336,6 +338,102 @@ catch (Exception e)
                     public void run(){
                         Toast.makeText(logbook.this, "No Record found ", Toast.LENGTH_SHORT).show();
 
+                        pd.dismiss();
+                    }
+                });
+            }
+
+        }
+
+    }
+    class fetcherym extends AsyncTask<Void,Void,Void> {
+        private Document doc=null;
+        Element table=null;
+        Elements days=null;
+        Element row=null;
+        Elements cols=null;
+        Element table1=null;
+        Elements days1=null;
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            try {
+                Connection.Response res = Jsoup
+                        .connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp")
+                        .data("txtRegNumber", "iamalsouser")
+                        .data("txtPwd", "thanksandregards")
+                        .data("txtSN", user)
+
+                        .data("txtPD", pass)
+                        .data("txtPA", "1")
+                        .method(Connection.Method.GET)
+                        .execute();
+
+                //Get cookies
+                Map<String, String> cookies = res.cookies();
+
+                doc = Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=16").cookies(cookies).get();
+                table = doc.select("table").get(0); //select the first table.
+                days = table.select("tr");
+
+
+            } catch (Exception e) {
+                System.err.println(e);
+
+                runOnUiThread(new Runnable(){
+
+                    @Override
+                    public void run(){
+                        Toast.makeText(logbook.this, "Either the server SUCKS or your internet ", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void result)
+        {
+
+
+            try {
+                Intent intent = new Intent(getApplicationContext(), marks.class);
+                String fx[]=new String[100];
+                int v=0;
+                for (int i=2;i<days.size();i++)
+                {
+                    row=days.get(i);
+                    cols=row.select("td");
+                    for(int j=0;j<cols.size();j++)
+                    {
+                        if(cols.size()==1) {
+                            fx[v] =cols.get(0).text().toString();
+                            v++;
+                            break;
+                        }
+                        fx[v]=cols.get(j).text().toString();
+                        v++;
+                    }
+                }
+                for (int i=0;i<v;i++)
+                    System.out.println(fx[i]);
+                Bundle b=new Bundle();
+                b.putStringArray("marks",fx);
+                intent.putExtras(b);
+                intent.putExtra("size",Integer.toString(v));
+
+
+
+                startActivity(intent);
+                pd.dismiss();
+            }
+            catch (Exception e)
+            {
+                runOnUiThread(new Runnable(){
+
+                    @Override
+                    public void run(){
+                        Toast.makeText(logbook.this, "No Record found ", Toast.LENGTH_SHORT).show();
                         pd.dismiss();
                     }
                 });
