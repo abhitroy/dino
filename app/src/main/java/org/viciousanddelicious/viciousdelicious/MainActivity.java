@@ -1,6 +1,9 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -15,6 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
@@ -44,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+       check();
 
 
-      final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
+
+        final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu);
         circlemenu.setMainMenu(Color.parseColor("#ffffff"),R.drawable.vnd,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#e57373"),R.drawable.log)
                 .addSubMenu(Color.parseColor("#81C784"),R.drawable.supplies)
@@ -187,4 +197,50 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-}
+    void test()
+    {
+      final  AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Our App got Uppdate");
+        builder.setIcon(R.drawable.vnd);
+        builder.setCancelable(false);
+        builder.setMessage("Please select to update")
+                .setPositiveButton("UPDATE", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com")));
+                        AlertDialog alert=builder.create();
+                        alert.show();
+                    }
+                });
+        AlertDialog alert=builder.create();
+        alert.show();
+    }
+    void check()
+    {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("version");
+
+// Attach a listener to read the data at our posts reference
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String str = dataSnapshot.getValue(String.class);
+                if(str.equals("1"))
+                    System.out.println("heloo");
+                else
+                {
+                    test();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+    }
+
+
+    }
+
