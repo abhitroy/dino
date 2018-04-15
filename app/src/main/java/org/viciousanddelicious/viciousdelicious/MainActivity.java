@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                                                               if (x==1)
                                                                   startActivity(new Intent(MainActivity.this,supply.class));
                                                               if (x==2)
-                                                                  startActivity(new Intent(MainActivity.this,evarsity.class));
+                                                                  startActivity(new Intent(MainActivity.this,Profile.class));
                                                           }
                                                       },1000);
 

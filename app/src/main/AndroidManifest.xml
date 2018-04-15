@@ -52,55 +52,58 @@
             android:name=".branch_year"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".subject_choice"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".subject_choice"
+            android:screenOrientation="portrait" />
         <activity android:name=".recycle_video" />
         <activity
             android:name=".rate"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".website"
-            android:theme="@style/AppTheme.new"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.new" />
         <activity
             android:name=".website_crack"
-            android:theme="@style/AppTheme.new"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.new" />
         <activity
             android:name=".website_ebook"
-            android:theme="@style/AppTheme.new"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.new" />
         <activity
             android:name=".chatroom"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".logbook"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".supply"
-            android:theme="@style/AppTheme.new"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.new" />
         <activity
             android:name=".timetable"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".day_order"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".evarsity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".attendence"
-            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
-            />
-        <activity android:name=".marks"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".marks"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FAQ"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -73,7 +73,7 @@
 
             <LinearLayout
                 android:layout_width="300dp"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:orientation="horizontal"
                 android:layout_marginTop="200dp"
                 android:id="@+id/branch_year_button">
@@ -86,7 +86,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="INVENTORY"
+                    android:text="CUSTOMIZE"
                     android:textSize="20dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="5dp"/>
@@ -104,17 +104,16 @@
             android:layout_height="30dp"
             android:orientation="horizontal"
             android:layout_marginTop="6dp"
-            android:id="@+id/notification">
+            android:id="@+id/inti">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/stars"
-                android:layout_marginLeft="0dp"/>
+                android:background="@drawable/stars"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NOTIFICATION"
+                android:text="INTIMATION"
                 android:textSize="20dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="5dp"/>
@@ -154,35 +153,35 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="6dp"/>
+                android:layout_marginTop="5dp"/>
 
-            <LinearLayout
-                android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:id="@+id/faq">
+
+            <ImageView
+                android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:id="@+id/rate">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/stars"
-                    android:layout_marginLeft="0dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="FAQ"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="5dp"/>
-            </LinearLayout>
-
+                android:background="@drawable/faq"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginLeft="0dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FAQ"
+                android:textSize="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
             <View
                 android:layout_width="270dp"
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="5dp"/>
 
             <LinearLayout
                 android:layout_width="300dp"
@@ -198,7 +197,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LOVE US RATE US !"
+                    android:text="JOIN US !"
                     android:textSize="20dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="5dp"/>

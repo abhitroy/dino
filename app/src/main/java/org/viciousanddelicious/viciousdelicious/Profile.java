@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -28,6 +29,7 @@ public class Profile extends AppCompatActivity {
     private LinearLayout branch_year_button;
     private LinearLayout cont;
     private LinearLayout rating;
+    private LinearLayout inti;
 
 
     @Override
@@ -45,7 +47,9 @@ public class Profile extends AppCompatActivity {
         });
         branch_year_button=(LinearLayout)findViewById(R.id.branch_year_button);
         cont=(LinearLayout)findViewById(R.id.contact);
-        rating=(LinearLayout)findViewById(R.id.rate);
+        rating=(LinearLayout)findViewById(R.id.faq);
+        inti=(LinearLayout)findViewById(R.id.inti);
+
 
         branch_year_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +62,15 @@ public class Profile extends AppCompatActivity {
         cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profile.this,chatroom.class));
+                Toast.makeText(Profile.this, "Coming Soon...", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        inti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Profile.this, "There Is Nothing For Now...", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -91,15 +103,9 @@ public class Profile extends AppCompatActivity {
         }
     }
 
-    public void contact()
-    {
-            startActivity(new Intent(Profile.this,contact.class));
-
-    }
-
     public void rate()
     {
-            startActivity(new Intent(Profile.this,rate.class));
+            startActivity(new Intent(Profile.this,FAQ.class));
 
     }
 
