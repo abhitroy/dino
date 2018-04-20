@@ -108,6 +108,20 @@
             android:layout_below="@+id/avg_percent"
             android:textColor="@color/black"
             android:layout_marginLeft="5dp"/>
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="OD/ML Percent:75%"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/alert"
+            android:layout_below="@+id/od_percent"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:textSize="17dp"/>
     </RelativeLayout>
 
 </RelativeLayout>

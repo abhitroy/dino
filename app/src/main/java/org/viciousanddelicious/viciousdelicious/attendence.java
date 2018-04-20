@@ -61,6 +61,12 @@ public class attendence extends AppCompatActivity {
 
 
     }
+    int alfinder(int t,int a)
+    {
+        int k=0;
+        for (k=0;100*(k+(t-a))/(t+k)<75;k++){}
+        return k;
+    }
 
     public class CustomAdapter extends ArrayAdapter<Subject> {
 
@@ -90,6 +96,7 @@ public class attendence extends AppCompatActivity {
             TextView avgp=(TextView)row.findViewById(R.id.avg_percent);
             TextView odp=(TextView)row.findViewById(R.id.od_percent);
             TextView subcode=(TextView)row.findViewById(R.id.subcode);
+            TextView alert=(TextView)row.findViewById(R.id.alert);
             title.setText("Subject Name:\n"+data.get(position).subjectname);
             total.setText("Tot. Percentage: "+data.get(position).total);
             max.setText("Total Hours:"+data.get(position).maxhours);
@@ -98,6 +105,11 @@ public class attendence extends AppCompatActivity {
             avgp.setText("Avg. Percentage: "+data.get(position).average);
             odp.setText("OD/ML Percentage: "+data.get(position).OD_ML);
             subcode.setText("Subject Code: "+data.get(position).subjectcode);
+           int val=alfinder(Integer.parseInt(data.get(position).maxhours),Integer.parseInt(data.get(position).absenthours));
+           if(val!=0)
+               alert.setText("You need "+Integer.toString(val)+" more classes for 75%");
+           else
+               alert.setText("");
             RelativeLayout lin=(RelativeLayout)row.findViewById(R.id.card_sub);
 
             if (Double.parseDouble(data.get(position).total)<65)
