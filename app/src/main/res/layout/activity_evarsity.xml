@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/evar_bg"
+    android:background="@drawable/evar_bg4"
     tools:context="org.viciousanddelicious.viciousdelicious.evarsity">
 
 
@@ -14,7 +14,7 @@
         android:text="EVARSITY"
         android:textSize="45dp"
         android:textStyle="bold"
-        android:textColor="#455A64"
+        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:id="@+id/evar"

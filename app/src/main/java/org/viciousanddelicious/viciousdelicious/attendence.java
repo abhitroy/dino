@@ -57,7 +57,7 @@ public class attendence extends AppCompatActivity {
         wave.setProgressValue(0);
         wave.setProgressValue((int)Double.parseDouble(t));
         total=(TextView)findViewById(R.id.total_attend);
-        total.setText("Total Percentage: "+t);
+        total.setText("Total Percentage: "+t+"%");
 
 
     }
