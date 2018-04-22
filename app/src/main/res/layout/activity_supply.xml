@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@mipmap/supply_bg"
+    android:background="@drawable/supply_bg4"
     tools:context="org.viciousanddelicious.viciousdelicious.supply">
 
     <RelativeLayout
