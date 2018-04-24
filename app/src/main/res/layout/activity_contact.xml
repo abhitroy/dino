@@ -30,30 +30,12 @@
             android:textColor="@color/white"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mail us on"
-            android:textSize="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/white"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="andymarvey@gmail.com"
-            android:textSize="25dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/white"
-            android:textStyle="italic"
-            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Developers:"
-            android:textSize="10dp"
+            android:textSize="15dp"
             android:layout_marginTop="150dp"
             android:layout_marginLeft="10dp"
             android:textColor="@color/white"
@@ -63,8 +45,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="rahulkrishnan221@gmail.com"
-            android:textSize="10dp"
+            android:text="R L RAHUL KRISHNAN"
+            android:textSize="20dp"
 
             android:layout_marginLeft="10dp"
             android:textColor="@color/white"
@@ -73,8 +55,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="surya09chettiyar@gmail.com"
-            android:textSize="10dp"
+            android:text="ABHIT ROY"
+            android:textSize="20dp"
             android:layout_marginLeft="10dp"
             android:textColor="@color/white"
             android:textStyle="italic"
@@ -82,8 +64,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="abhitroy0312@gmail.com"
-            android:textSize="10dp"
+            android:text="SURYA B"
+            android:textSize="20dp"
             android:layout_marginLeft="10dp"
             android:textColor="@color/white"
             android:textStyle="italic"

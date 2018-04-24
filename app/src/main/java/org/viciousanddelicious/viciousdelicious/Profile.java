@@ -33,6 +33,8 @@ public class Profile extends AppCompatActivity {
     private LinearLayout rating;
     private LinearLayout inti;
     private LinearLayout join;
+    private LinearLayout jugaad;
+    int count=0;
 
 
     @Override
@@ -53,7 +55,17 @@ public class Profile extends AppCompatActivity {
         rating=(LinearLayout)findViewById(R.id.faq);
         inti=(LinearLayout)findViewById(R.id.inti);
         join=(LinearLayout)findViewById(R.id.join);
+        jugaad=(LinearLayout)findViewById(R.id.jugaad);
 
+        jugaad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                count++;
+                if (count>10)
+                startActivity(new Intent(Profile.this,verify.class));
+
+            }
+        });
 
 
         branch_year_button.setOnClickListener(new View.OnClickListener() {

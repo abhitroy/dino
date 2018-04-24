@@ -48,8 +48,7 @@
         android:textColor="@color/black"
         android:hint="Registration Number"
         android:layout_marginLeft="30dp"
-        android:id="@+id/reg"
-        android:elevation="20dp"/>
+        android:id="@+id/reg" />
 
     <ImageView
         android:layout_width="45dp"
@@ -69,7 +68,6 @@
         android:hint="Password"
         android:layout_marginLeft="30dp"
         android:id="@+id/pass"
-        android:elevation="20dp"
         android:textColor="@color/black"
         android:password="true"/>
 

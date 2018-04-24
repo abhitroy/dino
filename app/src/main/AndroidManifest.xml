@@ -110,7 +110,8 @@
         <activity
             android:name=".FAQ"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".join_us"></activity>
+        <activity android:name=".join_us" />
+        <activity android:name=".verify"></activity>
     </application>
 
 </manifest>

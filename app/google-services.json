@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1052919239705-v51rfroa17271dh27o1p7bje1895oks0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.viciousanddelicious.viciousdelicious",
+            "certificate_hash": "fa78987a65daf06c5d328adb22518af0e7b9cdb5"
+          }
+        },
+        {
           "client_id": "1052919239705-imtr2m4vh0altc71re8ri5r8olkkscra.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
