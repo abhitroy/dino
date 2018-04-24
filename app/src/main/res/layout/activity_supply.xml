@@ -10,7 +10,7 @@
         android:layout_height="110dp"
         android:background="@drawable/btnbg"
         android:layout_centerInParent="true"
-        android:backgroundTint="#FFF9C4"></RelativeLayout>
+        android:backgroundTint="#FFAB91"></RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

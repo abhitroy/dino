@@ -29,6 +29,8 @@ ProgressDialog pd;
     public static final String preference_pass="pref_pass";
     public static final String saveit_pass="savekey_pass";
     TextView ski;
+    String l1="";
+    String l2="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +72,8 @@ ProgressDialog pd;
     }
     void check()
     {
+         l1=txtRegno.getText().toString();
+         l2=txtPwd.getText().toString();
         new fetcherx().execute();
     }
     class fetcherx extends AsyncTask<Void,Void,Void> {
@@ -78,8 +82,9 @@ ProgressDialog pd;
 
         @Override
         protected Void doInBackground(Void... arg0) {
+
             try{
-                 document= Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp?txtRegNumber=iamalsouser&txtPwd=thanksandregards&txtSN="+txtRegno.getText().toString()+"&txtPD="+txtPwd.getText().toString()+"&txtPA=1").timeout(100000).get();
+                 document= Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/usermanager/ParentLogin.jsp?txtRegNumber=iamalsouser&txtPwd=thanksandregards&txtSN="+l1+"&txtPD="+l2+"&txtPA=1").timeout(100000).get();
 
                    x=document.select("title").text().toString().trim();
                 runOnUiThread(new Runnable(){
@@ -129,7 +134,8 @@ ProgressDialog pd;
 
                     @Override
                     public void run(){
-                        Toast.makeText(evarsity.this, "Either the server SUCKS or your internet ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(evarsity.this, "Server Sucks else It's Your Internet! ", Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
                     }
                 });
 

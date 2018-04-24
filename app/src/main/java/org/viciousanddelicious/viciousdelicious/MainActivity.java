@@ -208,14 +208,14 @@ public class MainActivity extends AppCompatActivity {
     void test()
     {
       final  AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Our App got Uppdate");
+        builder.setTitle("VICIOUS AND DELICIOUS");
         builder.setIcon(R.drawable.vnd);
         builder.setCancelable(false);
-        builder.setMessage("Please select to update")
-                .setPositiveButton("UPDATE", new DialogInterface.OnClickListener() {
+        builder.setMessage("Update your app in order to continue using it...")
+                .setPositiveButton("UPDATE NOW", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.google.com")));
+                        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.viciousanddelicious.org/")));
                         AlertDialog alert=builder.create();
                         alert.show();
                     }

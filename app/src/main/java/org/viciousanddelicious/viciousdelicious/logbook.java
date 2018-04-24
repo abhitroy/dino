@@ -1,10 +1,13 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +16,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
@@ -46,6 +54,7 @@ public class logbook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logbook);
+        check();
         final SharedPreferences sf_pass=getSharedPreferences(preference_pass, Context.MODE_PRIVATE);
          pass = sf_pass.getString(saveit_pass,"");
 
@@ -58,7 +67,7 @@ public class logbook extends AppCompatActivity {
 
 
         final CircleMenu circlemenu = (CircleMenu) findViewById(R.id.circle_menu_log);
-        circlemenu.setMainMenu(Color.parseColor("#81C784"),R.drawable.log,R.drawable.multiply)
+        circlemenu.setMainMenu(Color.parseColor("#FFF176"),R.drawable.log,R.drawable.multiply)
                 .addSubMenu(Color.parseColor("#e57373"),R.drawable.attendence)
                 .addSubMenu(Color.parseColor("#FFF176"),R.drawable.timetable)
                 .addSubMenu(Color.parseColor("#81D4FA"),R.drawable.grade)
@@ -439,6 +448,49 @@ catch (Exception e)
 
         }
 
+    }  void test()
+    {
+        final  AlertDialog.Builder builder=new AlertDialog.Builder(logbook.this);
+        builder.setTitle("VICIOUS AND DELICIOUS");
+        builder.setIcon(R.drawable.vnd);
+        builder.setCancelable(false);
+        builder.setMessage("Update your app in order to continue using it...")
+                .setPositiveButton("UPDATE NOW", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.viciousanddelicious.org/")));
+                        AlertDialog alert=builder.create();
+                        alert.show();
+                    }
+                });
+        AlertDialog alert=builder.create();
+        alert.show();
     }
+    void check()
+    {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("version");
+
+// Attach a listener to read the data at our posts reference
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String str = dataSnapshot.getValue(String.class);
+                if(str.equals("1"))
+                    System.out.println("heloo");
+                else
+                {
+                    test();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+    }
+
 
 }

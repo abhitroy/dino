@@ -68,9 +68,6 @@
             android:screenOrientation="portrait" />
         <activity android:name=".recycle_video" />
         <activity
-            android:name=".rate"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".website"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.new" />
