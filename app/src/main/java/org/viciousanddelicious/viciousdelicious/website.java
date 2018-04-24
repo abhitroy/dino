@@ -48,16 +48,16 @@ public class website extends AppCompatActivity {
         });
 
         if(branch.trim().equalsIgnoreCase("YEAR 1")) {
-            webview.loadUrl("http://viciousanddelicious.org/page10.html");
+            webview.loadUrl("http://vicious.byethost24.com/pagem81.html");
         }
         if(branch.trim().equalsIgnoreCase("YEAR 2")) {
-            webview.loadUrl("http://viciousanddelicious.org/page11.html");
+            webview.loadUrl("http://vicious.byethost24.com/pagem82.html");
         }
         if(branch.trim().equalsIgnoreCase("YEAR 3")) {
-            webview.loadUrl("http://viciousanddelicious.org/page12.html");
+            webview.loadUrl("http://vicious.byethost24.com/pagem83.html");
         }
         if(branch.trim().equalsIgnoreCase("YEAR 4")) {
-            webview.loadUrl("http://viciousanddelicious.org/page13.html");
+            webview.loadUrl("http://vicious.byethost24.com/pagem84.html");
         }
 
     }

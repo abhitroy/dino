@@ -53,28 +53,28 @@ public class website_crack extends AppCompatActivity {
         });
 
         if(sem.trim().equalsIgnoreCase("SEMESTER 1")) {
-            webview.loadUrl("http://viciousanddelicious.org/page7.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged31.html");
         }
         if(sem.trim().equalsIgnoreCase("SEMESTER 2")) {
-            webview.loadUrl("http://viciousanddelicious.org/page8.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged32.html");
         }
         if(sem.trim().equalsIgnoreCase("SEMESTER 3")) {
-            webview.loadUrl("http://viciousanddelicious.org/page9.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged33.html");
         }
         if(sem.trim().equalsIgnoreCase("SEMESTER 4")) {
-            webview.loadUrl("http://viciousanddelicious.org/page6.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged34.html");
         }
         if(sem.trim().equalsIgnoreCase("SEMESTER 5")) {
-            webview.loadUrl("http://viciousanddelicious.org/page6.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged35.html");
         }
         if(sem.trim().equalsIgnoreCase("SEMESTER 6")) {
-            webview.loadUrl("http://viciousanddelicious.org/page6.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged36.html");
         }
         if(sem.trim().equalsIgnoreCase("SEMESTER 7")) {
-            webview.loadUrl("http://viciousanddelicious.org/page6.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged37.html");
         }
         if(sem.trim().equalsIgnoreCase("SEMESTER 8")) {
-            webview.loadUrl("http://viciousanddelicious.org/page6.html");
+            webview.loadUrl("http://vicious.byethost24.com/paged38.html");
         }
     }
 }
