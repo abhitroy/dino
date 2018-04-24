@@ -1,12 +1,14 @@
 package org.viciousanddelicious.viciousdelicious;
 
+import java.io.Serializable;
+
 /**
  * Created by rahul on 15/4/18.
  */
 
-public class user_model {
-    private String user;
-    private String email;
+public class user_model  implements Serializable {
+    public String user;
+    public String email;
 
 
     public user_model(String user, String email) {
