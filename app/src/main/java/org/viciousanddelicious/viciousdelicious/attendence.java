@@ -105,9 +105,10 @@ public class attendence extends AppCompatActivity {
             avgp.setText("Avg. Percentage: "+data.get(position).average);
             odp.setText("OD/ML Percentage: "+data.get(position).OD_ML);
             subcode.setText("Subject Code: "+data.get(position).subjectcode);
-           int val=alfinder(Integer.parseInt(data.get(position).maxhours),Integer.parseInt(data.get(position).absenthours));
-           if(val!=0)
-               alert.setText("You need "+Integer.toString(val)+" more classes for 75%");
+            if(Double.parseDouble(data.get(position).total)<75) {
+                int val = alfinder(Integer.parseInt(data.get(position).maxhours), Integer.parseInt(data.get(position).absenthours));
+                    alert.setText("You need " + Integer.toString(val) + " more classes for 75%");
+            }
            else
                alert.setText("");
             RelativeLayout lin=(RelativeLayout)row.findViewById(R.id.card_sub);
