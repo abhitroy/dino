@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,6 +32,7 @@ public class Profile extends AppCompatActivity {
     private LinearLayout cont;
     private LinearLayout rating;
     private LinearLayout inti;
+    private LinearLayout join;
 
 
     @Override
@@ -49,6 +52,8 @@ public class Profile extends AppCompatActivity {
         cont=(LinearLayout)findViewById(R.id.contact);
         rating=(LinearLayout)findViewById(R.id.faq);
         inti=(LinearLayout)findViewById(R.id.inti);
+        join=(LinearLayout)findViewById(R.id.join);
+
 
 
         branch_year_button.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +85,12 @@ public class Profile extends AppCompatActivity {
                 rate();
             }
         });
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                join();
+            }
+        });
 
         }
     public void out()
@@ -102,10 +113,27 @@ public class Profile extends AppCompatActivity {
 
         }
     }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 
     public void rate()
     {
+        if (isNetworkAvailable())
             startActivity(new Intent(Profile.this,FAQ.class));
+        else
+            Toast.makeText(this, "Check your Internet Connection", Toast.LENGTH_SHORT).show();
+
+    }
+    public void join()
+    {
+        if (isNetworkAvailable())
+            startActivity(new Intent(Profile.this,join_us.class));
+        else
+            Toast.makeText(this, "Check your Internet Connection", Toast.LENGTH_SHORT).show();
 
     }
 
