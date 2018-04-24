@@ -26,6 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
+import static org.viciousanddelicious.viciousdelicious.branch_year.preference;
+import static org.viciousanddelicious.viciousdelicious.branch_year.saveit;
 import static org.viciousanddelicious.viciousdelicious.evarsity.preference_pass;
 import static org.viciousanddelicious.viciousdelicious.evarsity.preference_user;
 import static org.viciousanddelicious.viciousdelicious.evarsity.saveit_pass;
@@ -85,8 +87,14 @@ public class MainActivity extends AppCompatActivity {
                                                                       startActivity(i);
                                                                   }
                                                               }
-                                                              if (x==1)
-                                                                  startActivity(new Intent(MainActivity.this,supply.class));
+                                                              if (x==1) {
+                                                                  SharedPreferences sf3=getSharedPreferences(preference, Context.MODE_PRIVATE);
+                                                                  String sem = sf3.getString(saveit,"");
+                                                                  if (sem.equalsIgnoreCase("SELECT YOUR SEMESTER"))
+                                                                      startActivity(new Intent(MainActivity.this,branch_year.class));
+                                                                  else
+                                                                  startActivity(new Intent(MainActivity.this, supply.class));
+                                                              }
                                                               if (x==2)
                                                                   startActivity(new Intent(MainActivity.this,Profile.class));
                                                           }
