@@ -161,7 +161,7 @@ public class loginf extends AppCompatActivity {
                 firebaseAuthWithGoogle(account);
                 startActivity(i);
             } else {
-                Toast.makeText(this, "Auth went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Check Your Connectivity", Toast.LENGTH_SHORT).show();
             }
         }
 

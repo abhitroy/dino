@@ -54,7 +54,6 @@
         <activity
             android:name=".Profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".recycle" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -64,10 +63,6 @@
             android:name=".branch_year"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".subject_choice"
-            android:screenOrientation="portrait" />
-        <activity android:name=".recycle_video" />
         <activity
             android:name=".website"
             android:screenOrientation="portrait"
